@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sentilux Pastel Design System - All colors in HSL */
+@layer base {
+  :root {
+    /* Core tokens */
+    --background: 30 33% 98%;
+    --foreground: 215 25% 27%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    
+    /* Primary - Indigo tones */
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft slate */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 27%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 239 84% 95%;
+    --accent-foreground: 239 84% 40%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 239 84% 67%;
+    
+    --radius: 0.5rem;
+
+    /* Sentilux Custom Pastel Palette */
+    --sentilux-pink-50: 355 100% 97%;
+    --sentilux-pink-100: 355 100% 95%;
+    --sentilux-pink-200: 355 100% 90%;
+    --sentilux-pink-300: 350 96% 78%;
+    
+    --sentilux-indigo-50: 239 100% 98%;
+    --sentilux-indigo-100: 239 100% 95%;
+    --sentilux-indigo-200: 239 94% 87%;
+    --sentilux-indigo-300: 239 84% 67%;
+    --sentilux-indigo-400: 239 84% 67%;
+    --sentilux-indigo-900: 239 84% 15%;
+    
+    --sentilux-emerald-50: 152 81% 96%;
+    --sentilux-emerald-100: 149 80% 90%;
+    --sentilux-emerald-200: 152 76% 80%;
+    --sentilux-emerald-800: 163 94% 24%;
+    
+    --sentilux-purple-100: 270 100% 95%;
+    
+    --sentilux-rose-50: 356 100% 97%;
+    --sentilux-rose-100: 356 100% 95%;
+    --sentilux-rose-200: 353 96% 90%;
+    
+    /* Glass panel */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.6;
+    
+    /* Chart colors */
+    --chart-positive: 152 76% 80%;
+    --chart-negative: 353 96% 90%;
+    --chart-neutral: 239 94% 87%;
+    
+    /* Mood gradients */
+    --mood-positive: radial-gradient(circle at top right, hsl(152 81% 96%) 0%, hsl(149 80% 90%) 35%, hsl(30 33% 98%) 100%);
+    --mood-negative: radial-gradient(circle at top right, hsl(356 100% 97%) 0%, hsl(356 100% 95%) 35%, hsl(30 33% 98%) 100%);
+    --mood-neutral: radial-gradient(circle at top right, hsl(239 100% 98%) 0%, hsl(239 100% 95%) 35%, hsl(30 33% 98%) 100%);
+    --mood-default: linear-gradient(135deg, hsl(30 33% 98%) 0%, hsl(24 25% 88%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 240 6% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 27% 84%;
+
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 224 76% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* Glass panel effect */
+  .glass-panel {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--foreground) / 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Mood backgrounds */
+  .mood-positive {
+    background: var(--mood-positive);
+  }
+  
+  .mood-negative {
+    background: var(--mood-negative);
+  }
+  
+  .mood-neutral {
+    background: var(--mood-neutral);
+  }
+  
+  .mood-default {
+    background: var(--mood-default);
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-in {
+    animation: animate-in 0.5s ease-out;
+  }
+  
+  @keyframes animate-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-in-from-bottom-6 {
+    animation: slide-from-bottom 0.7s ease-out;
+  }
+  
+  @keyframes slide-from-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-in-from-right-12 {
+    animation: slide-from-right 1s ease-out;
+  }
+  
+  @keyframes slide-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(48px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-in-from-left-12 {
+    animation: slide-from-left 1s ease-out;
+  }
+  
+  @keyframes slide-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-48px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-in-from-top-4 {
+    animation: slide-from-top 0.5s ease-out;
+  }
+  
+  @keyframes slide-from-top {
+    from {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .zoom-in-95 {
+    animation: zoom-in 0.3s ease-out;
+  }
+  
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
