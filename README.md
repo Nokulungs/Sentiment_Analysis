@@ -4,7 +4,7 @@
 
 **Sentilux** is a premium, full-stack sentiment analysis suite designed to transform raw text into actionable emotional intelligence. Built with a focus on user experience and deep data visualization andreal-time and batch NLP processing.
 
-### 🌐 [Live Demo](https://sentiment-analysis-msmi.vercel.app/)
+### 🌐 [Live Demo](https://sentiment-analysis-msmi.vercel.app/))
 
 ---
 
